@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "version": "3.0.8",
+  "version": "3.0.9",
   "scripts": {
     "build": "npx rimraf types-dist && npx rimraf lib && npx rollup -c rollup.config.mjs && ttsc --project tsconfig.declarations.json && api-extractor run && npx rimraf types-dist && npx rimraf dist && npx webpack --config webpack.config.js",
     "test": "vitest run"
