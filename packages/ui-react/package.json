@@ -1,6 +1,9 @@
 {
-  "name": "@tonconnect/ui-react",
-  "version": "2.0.12",
+  "name": "@b2data/tonconnect-ui-react",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "version": "2.0.13",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build"
@@ -52,7 +55,7 @@
     "vite-plugin-dts": "^1.7.1"
   },
   "dependencies": {
-    "@tonconnect/ui": "2.0.12"
+    "@b2data/tonconnect-ui": "2.0.13"
   },
   "peerDependencies": {
     "react": ">=17.0.0",

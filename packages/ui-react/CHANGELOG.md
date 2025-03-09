@@ -1,4 +1,8 @@
-# Changelog @tonconnect/ui-react 
+# Changelog @b2data/tonconnect-ui-react 
+
+## [2.0.13](https://github.com/b2data/ton-connect-sdk/compare/ui-react-2.0.12...ui-react-2.0.13) (2025-03-09)
+
+
 
 ## [2.0.12](https://github.com/ton-connect/sdk/compare/ui-react-2.0.12-alpha.1...ui-react-2.0.12) (2025-03-06)
 
@@ -17,7 +21,7 @@
 
 ### Bug Fixes
 
-* **ui-react:** update @tonconnect/ui dependency to 2.0.11 ([9f26590](https://github.com/ton-connect/sdk/commit/9f26590b8e807f0be6d0b4d9ee8ef735bb54e892))
+* **ui-react:** update @b2data/tonconnect-ui dependency to 2.0.11 ([9f26590](https://github.com/ton-connect/sdk/commit/9f26590b8e807f0be6d0b4d9ee8ef735bb54e892))
 
 
 
