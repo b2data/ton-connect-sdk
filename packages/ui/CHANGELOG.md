@@ -1,5 +1,9 @@
 # Changelog @b2data/tonconnect-ui 
 
+## [2.0.15](https://github.com/b2data/ton-connect-sdk/compare/ui-2.0.14...ui-2.0.15) (2025-03-09)
+
+
+
 ## [2.0.14](https://github.com/b2data/ton-connect-sdk/compare/ui-2.0.13...ui-2.0.14) (2025-03-09)
 
 
