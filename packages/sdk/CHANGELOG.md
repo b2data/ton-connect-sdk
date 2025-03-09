@@ -1,4 +1,8 @@
-# Changelog @tonconnect/sdk 
+# Changelog @b2data/tonconnect-sdk 
+
+## [3.0.8](https://github.com/b2data/ton-connect-sdk/compare/sdk-3.0.7...sdk-3.0.8) (2025-03-09)
+
+
 
 ## [3.0.7](https://github.com/ton-connect/sdk/compare/sdk-3.0.7-alpha.1...sdk-3.0.7) (2025-03-06)
 
