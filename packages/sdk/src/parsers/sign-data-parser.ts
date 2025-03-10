@@ -4,7 +4,7 @@ import {
   SignDataRpcRequest,
   SignDataRpcResponseError,
   SignDataRpcResponseSuccess
-} from '@tonconnect/protocol';
+} from '@b2data/tonconnect-protocol';
 import { BadRequestError, TonConnectError, UnknownAppError, UserRejectsError } from 'src/errors';
 import { UnknownError } from 'src/errors/unknown.error';
 import { SignDataRequest, SignDataResponse } from 'src/models/methods';

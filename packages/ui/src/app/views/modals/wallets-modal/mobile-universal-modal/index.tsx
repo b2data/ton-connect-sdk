@@ -1,4 +1,4 @@
-import { ConnectAdditionalRequest, isWalletInfoRemote, WalletInfo } from '@tonconnect/sdk';
+import { ConnectAdditionalRequest, isWalletInfoRemote, WalletInfo } from '@b2data/tonconnect-sdk';
 import { Component, createMemo, createSignal, For, Show } from 'solid-js';
 import { AtWalletIcon, FourWalletsItem, QRIcon, WalletItem } from 'src/app/components';
 import {

@@ -1,5 +1,5 @@
 import { PersonalizedWalletInfo } from 'src/app/models/personalized-wallet-info';
-import { isWalletInfoRemote } from '@tonconnect/sdk';
+import { isWalletInfoRemote } from '@b2data/tonconnect-sdk';
 
 export function getUniqueBridges(walletsList: PersonalizedWalletInfo[]): { bridgeUrl: string }[] {
     const uniqueBridges = new Set(

@@ -12,7 +12,7 @@ import { TonConnectUI } from 'src/ton-connect-ui';
 import App from './App';
 import { WalletInfoWithOpenMethod, WalletOpenMethod } from 'src/models/connected-wallet';
 import { WalletsModalCloseReason } from 'src/models';
-import { WalletInfoRemote } from '@tonconnect/sdk';
+import { WalletInfoRemote } from '@b2data/tonconnect-sdk';
 
 export const widgetController = {
     openWalletsModal: (): void =>

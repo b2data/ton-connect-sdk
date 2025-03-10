@@ -1,4 +1,4 @@
-import { CHAIN } from '@tonconnect/protocol';
+import { CHAIN } from '@b2data/tonconnect-protocol';
 
 export interface Account {
     /**

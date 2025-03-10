@@ -1,4 +1,4 @@
-import { WalletInfoRemote } from '@tonconnect/sdk';
+import { WalletInfoRemote } from '@b2data/tonconnect-sdk';
 import { WalletsModalCloseReason } from 'src/models/wallets-modal';
 
 export interface SingleWalletModal {

@@ -8,7 +8,7 @@ import {
     TonAddressItemReply,
     TonProofItemReply,
     WalletEvent
-} from '@tonconnect/protocol';
+} from '@b2data/tonconnect-protocol';
 import { DappMetadataError } from 'src/errors/dapp/dapp-metadata.error';
 import { ManifestContentErrorError } from 'src/errors/protocol/events/connect/manifest-content-error.error';
 import { ManifestNotFoundError } from 'src/errors/protocol/events/connect/manifest-not-found.error';

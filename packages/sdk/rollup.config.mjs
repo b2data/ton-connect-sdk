@@ -18,7 +18,7 @@ export default [
       }),
       typescript()
     ],
-    external: ["@tonconnect/protocol", "@tonconnect/isomorphic-fetch", "@tonconnect/isomorphic-eventsource"]
+    external: ["@b2data/tonconnect-protocol", "@tonconnect/isomorphic-fetch", "@tonconnect/isomorphic-eventsource"]
   },
   {
     input: "src/index.ts",
@@ -33,6 +33,6 @@ export default [
       }),
       typescript()
     ],
-    external: ["@tonconnect/protocol", "@tonconnect/isomorphic-fetch", "@tonconnect/isomorphic-eventsource"]
+    external: ["@b2data/tonconnect-protocol", "@tonconnect/isomorphic-fetch", "@tonconnect/isomorphic-eventsource"]
   }
 ];

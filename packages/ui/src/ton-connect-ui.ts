@@ -2,7 +2,7 @@ import type {
     Account,
     ConnectAdditionalRequest,
     WalletInfoCurrentlyEmbedded
-} from '@tonconnect/sdk';
+} from '@b2data/tonconnect-sdk';
 import {
     isTelegramUrl,
     isWalletInfoCurrentlyEmbedded,
@@ -15,7 +15,7 @@ import {
     TonConnectError,
     Wallet,
     WalletInfo
-} from '@tonconnect/sdk';
+} from '@b2data/tonconnect-sdk';
 import { widgetController } from 'src/app/widget-controller';
 import { TonConnectUIError } from 'src/errors/ton-connect-ui.error';
 import { TonConnectUiCreateOptions } from 'src/models/ton-connect-ui-create-options';
@@ -204,7 +204,8 @@ export class TonConnectUI {
         } else if (options && 'manifestUrl' in options && options.manifestUrl) {
             this.connector = new TonConnect({
                 manifestUrl: options.manifestUrl,
-                eventDispatcher: options?.eventDispatcher
+                eventDispatcher: options?.eventDispatcher,
+                walletsListSource: options?.walletsListSource,
             });
         } else {
             throw new TonConnectUIError(

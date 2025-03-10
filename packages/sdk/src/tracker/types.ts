@@ -1,4 +1,4 @@
-import { CONNECT_EVENT_ERROR_CODES, ConnectItem, SEND_TRANSACTION_ERROR_CODES, SIGN_DATA_ERROR_CODES } from '@tonconnect/protocol';
+import { CONNECT_EVENT_ERROR_CODES, ConnectItem, SEND_TRANSACTION_ERROR_CODES, SIGN_DATA_ERROR_CODES } from '@b2data/tonconnect-protocol';
 import { SendTransactionRequest, SendTransactionResponse, SignDataRequest, SignDataResponse, Wallet } from 'src/models';
 
 /**

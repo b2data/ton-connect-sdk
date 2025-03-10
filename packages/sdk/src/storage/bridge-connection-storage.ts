@@ -1,4 +1,4 @@
-import { SessionCrypto } from '@tonconnect/protocol';
+import { SessionCrypto } from '@b2data/tonconnect-protocol';
 import { TonConnectError } from 'src/errors';
 import { BridgeSessionRaw } from 'src/provider/bridge/models/bridge-session-raw';
 import {

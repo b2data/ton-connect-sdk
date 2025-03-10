@@ -1,5 +1,5 @@
 /**
- * Base class for TonConnect errors. You can check if the error was triggered by the @tonconnect/sdk using `err instanceof TonConnectError`.
+ * Base class for TonConnect errors. You can check if the error was triggered by the @b2data/tonconnect-sdk using `err instanceof TonConnectError`.
  */
 export class TonConnectError extends Error {
     private static prefix = '[TON_CONNECT_SDK_ERROR]';

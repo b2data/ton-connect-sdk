@@ -1,4 +1,4 @@
-import { Feature, SendTransactionFeature } from '@tonconnect/protocol';
+import { Feature, SendTransactionFeature } from '@b2data/tonconnect-protocol';
 import { logWarning } from 'src/utils/log';
 import { WalletNotSupportFeatureError } from 'src/errors/wallet/wallet-not-support-feature.error';
 

@@ -10,7 +10,7 @@ import {
     WalletEvent,
     WalletMessage,
     WalletResponse
-} from '@tonconnect/protocol';
+} from '@b2data/tonconnect-protocol';
 import { TonConnectError } from 'src/errors/ton-connect.error';
 import { WalletConnectionSourceHTTP } from 'src/models/wallet/wallet-connection-source';
 import { BridgeGateway } from 'src/provider/bridge/bridge-gateway';

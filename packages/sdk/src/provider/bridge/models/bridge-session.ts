@@ -1,4 +1,4 @@
-import { SessionCrypto } from '@tonconnect/protocol';
+import { SessionCrypto } from '@b2data/tonconnect-protocol';
 
 export interface BridgeSession {
     sessionCrypto: SessionCrypto;

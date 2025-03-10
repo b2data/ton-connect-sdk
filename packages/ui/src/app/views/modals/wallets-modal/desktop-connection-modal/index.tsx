@@ -4,7 +4,7 @@ import {
     isWalletInfoCurrentlyInjected,
     WalletInfoInjectable,
     WalletInfoRemote
-} from '@tonconnect/sdk';
+} from '@b2data/tonconnect-sdk';
 import {
     Component,
     createEffect,

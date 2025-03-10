@@ -1,2 +1,2 @@
 export * from './library';
-export * from '@tonconnect/sdk';
+export * from '@b2data/tonconnect-sdk';

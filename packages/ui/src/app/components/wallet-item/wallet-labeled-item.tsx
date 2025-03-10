@@ -3,7 +3,7 @@ import { Styleable } from 'src/app/models/styleable';
 import { PersonalizedWalletInfo } from 'src/app/models/personalized-wallet-info';
 import { AT_WALLET_APP_NAME } from 'src/app/env/AT_WALLET_APP_NAME';
 import { WalletItem } from 'src/app/components';
-import { isWalletInfoCurrentlyInjected } from '@tonconnect/sdk';
+import { isWalletInfoCurrentlyInjected } from '@b2data/tonconnect-sdk';
 import { IMG } from 'src/app/env/IMG';
 import { useI18n } from '@solid-primitives/i18n';
 

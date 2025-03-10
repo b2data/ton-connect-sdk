@@ -1,7 +1,7 @@
 /* @refresh reload */
 import { TonConnectUI } from 'src/ton-connect-ui';
 import { THEME } from 'src/models';
-import { SendTransactionRequest, TonConnect } from '@tonconnect/sdk';
+import { SendTransactionRequest, TonConnect } from '@b2data/tonconnect-sdk';
 
 async function dev(): Promise<void> {
     const connector = new TonConnect({

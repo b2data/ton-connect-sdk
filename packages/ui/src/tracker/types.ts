@@ -5,7 +5,7 @@ import {
     TransactionSigningEvent,
     DataSigningEvent,
     VersionEvent
-} from '@tonconnect/sdk';
+} from '@b2data/tonconnect-sdk';
 
 /**
  * User action events.
@@ -34,4 +34,4 @@ export {
     createDataSentForSignatureEvent,
     createDataSigningFailedEvent,
     createDataSignedEvent
-} from '@tonconnect/sdk';
+} from '@b2data/tonconnect-sdk';

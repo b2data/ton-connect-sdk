@@ -1,4 +1,4 @@
-import { Base64, RpcMethod } from '@tonconnect/protocol';
+import { Base64, RpcMethod } from '@b2data/tonconnect-protocol';
 import { TonConnectError } from 'src/errors/ton-connect.error';
 import { BridgeIncomingMessage } from 'src/provider/bridge/models/bridge-incomming-message';
 import { HttpBridgeGatewayStorage } from 'src/storage/http-bridge-gateway-storage';

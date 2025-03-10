@@ -3,7 +3,7 @@ import { ManifestContentErrorError } from 'src/errors/protocol/events/connect/ma
 import { ManifestNotFoundError } from 'src/errors/protocol/events/connect/manifest-not-found.error';
 import { TonConnectError } from 'src/errors/ton-connect.error';
 import { UnknownError } from 'src/errors/unknown.error';
-import { CONNECT_EVENT_ERROR_CODES, ConnectEventError } from '@tonconnect/protocol';
+import { CONNECT_EVENT_ERROR_CODES, ConnectEventError } from '@b2data/tonconnect-protocol';
 
 const connectEventErrorsCodes: Partial<Record<CONNECT_EVENT_ERROR_CODES, typeof TonConnectError>> =
     {

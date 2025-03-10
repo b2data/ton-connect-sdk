@@ -59,7 +59,7 @@ export type {
     WithoutVersion
 } from './tracker/types';
 export { BrowserEventDispatcher } from './tracker/browser-event-dispatcher';
-export type { TonAddressItem, TonProofItem, ConnectItem } from '@tonconnect/protocol';
+export type { TonAddressItem, TonProofItem, ConnectItem } from '@b2data/tonconnect-protocol';
 export {
     CHAIN,
     DeviceInfo,
@@ -76,6 +76,6 @@ export {
     CONNECT_EVENT_ERROR_CODES,
     SEND_TRANSACTION_ERROR_CODES,
     SIGN_DATA_ERROR_CODES,
-} from '@tonconnect/protocol';
+} from '@b2data/tonconnect-protocol';
 export { toUserFriendlyAddress } from './utils/address';
 export { isTelegramUrl, encodeTelegramUrlParameters } from './utils/url';

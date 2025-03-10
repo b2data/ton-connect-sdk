@@ -17,7 +17,7 @@ You can find more details and the protocol specification in the [docs](https://d
 # Getting started
 
 ## Installation with npm
-`npm i @tonconnect/ui-react`
+`npm i @b2data/tonconnect-ui-react`
 
 # Usage
 
@@ -28,7 +28,7 @@ Add TonConnectUIProvider to the root of the app. You can specify UI options usin
 All TonConnect UI hooks calls and `<TonConnectButton />` component must be placed inside `<TonConnectUIProvider>`.
 
 ```tsx
-import { TonConnectUIProvider } from '@tonconnect/ui-react';
+import { TonConnectUIProvider } from '@b2data/tonconnect-ui-react';
 
 export function App() {
     return (
@@ -65,7 +65,7 @@ You can add `className` and `style` props to the button as well. Note that you c
 Use it to get user's current ton wallet address. Pass boolean parameter isUserFriendly to choose format of the address. If wallet is not connected hook will return empty string.
 
 ```tsx
-import { useTonAddress } from '@tonconnect/ui-react';
+import { useTonAddress } from '@b2data/tonconnect-ui-react';
 
 export const Address = () => {
     const userFriendlyAddress = useTonAddress();
@@ -91,7 +91,7 @@ See all wallet's properties
 [WalletInfo interface](https://ton-connect.github.io/sdk/types/_tonconnect_sdk.WalletInfo.html)
 
 ```tsx
-import { useTonWallet } from '@tonconnect/ui-react';
+import { useTonWallet } from '@b2data/tonconnect-ui-react';
 
 export const Wallet = () => {
     const wallet = useTonWallet();
@@ -112,7 +112,7 @@ export const Wallet = () => {
 Use this hook to access the functions for opening and closing the modal window. The hook returns an object with the current modal state and methods to open and close the modal.
 
 ```tsx
-import { useTonConnectModal } from '@tonconnect/ui-react';
+import { useTonConnectModal } from '@b2data/tonconnect-ui-react';
 
 export const ModalControl = () => {
     const { state, open, close } = useTonConnectModal();
@@ -136,7 +136,7 @@ Use it to get access to the `TonConnectUI` instance and UI options updating func
 
 
 ```tsx
-import { Locales, useTonConnectUI } from '@tonconnect/ui-react';
+import { Locales, useTonConnectUI } from '@b2data/tonconnect-ui-react';
 
 export const Settings = () => {
     const [tonConnectUI, setOptions] = useTonConnectUI();
@@ -184,7 +184,7 @@ Indicates current status of the connection restoring process.
 You can use it to detect when connection restoring process if finished.
 
 ```tsx
-import { useIsConnectionRestored } from '@tonconnect/ui-react';
+import { useIsConnectionRestored } from '@b2data/tonconnect-ui-react';
 
 export const EntrypointPage = () => {
     const connectionRestored = useIsConnectionRestored();
@@ -264,7 +264,7 @@ if (!tonProofPayload) {
 You can find `ton_proof` result in the `wallet` object when wallet will be connected:
 
 ```ts
-import {useTonConnectUI} from "@tonconnect/ui-react";
+import {useTonConnectUI} from "@b2data/tonconnect-ui-react";
 
 const [tonConnectUI] = useTonConnectUI();
 
@@ -283,7 +283,7 @@ useEffect(() =>
 If you encounter any issues with the Android back handler, such as modals not closing properly when the back button is pressed, or conflicts with `history.pushState()` if you are manually handling browser history in your application, you can disable the back handler by setting `enableAndroidBackHandler` to `false`:
 
 ```tsx
-import { TonConnectUIProvider } from '@tonconnect/ui-react';
+import { TonConnectUIProvider } from '@b2data/tonconnect-ui-react';
 
 export function App() {
     return (
@@ -340,9 +340,9 @@ Module not found: Can't resolve 'encoding' in '.../node_modules/node-fetch/lib'
 Import trace for requested module:
 ./node_modules/node-fetch/lib/index.js
 ./node_modules/@tonconnect/isomorphic-fetch/index.mjs
-./node_modules/@tonconnect/sdk/lib/esm/index.mjs
-./node_modules/@tonconnect/ui/lib/esm/index.mjs
-./node_modules/@tonconnect/ui-react/lib/esm/index.js
+./node_modules/@b2data/tonconnect-sdk/lib/esm/index.mjs
+./node_modules/@b2data/tonconnect-ui/lib/esm/index.mjs
+./node_modules/@b2data/tonconnect-ui-react/lib/esm/index.js
 ```
 
 Please note that this is just a warning and should not affect the functionality of your application. If you wish to suppress the warning, you have two options:

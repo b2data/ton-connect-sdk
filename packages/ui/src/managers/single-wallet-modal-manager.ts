@@ -7,7 +7,7 @@ import {
     ITonConnect,
     WalletInfoCurrentlyEmbedded,
     WalletInfoRemote
-} from '@tonconnect/sdk';
+} from '@b2data/tonconnect-sdk';
 import { appState } from 'src/app/state/app.state';
 import { widgetController } from 'src/app/widget-controller';
 import { SingleWalletModal, SingleWalletModalState } from 'src/models/single-wallet-modal';

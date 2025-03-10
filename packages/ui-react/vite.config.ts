@@ -22,7 +22,7 @@ export default defineConfig({
     lib: {
       formats: ['es', 'cjs'],
       entry: path.resolve('src/index.ts'),
-      name: '@tonconnect/ui-react',
+      name: '@b2data/tonconnect-ui-react',
       fileName: (format) => {
         switch (format) {
           case 'es':
@@ -35,12 +35,12 @@ export default defineConfig({
       }
     },
     rollupOptions: {
-      external: ['react', 'react-dom', '@tonconnect/ui'],
+      external: ['react', 'react-dom', '@b2data/tonconnect-ui'],
       output: {
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
-          '@tonconnect/ui': 'TON_CONNECT_UI'
+          '@b2data/tonconnect-ui': 'TON_CONNECT_UI'
         }
       }
     }

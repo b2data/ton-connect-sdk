@@ -1,5 +1,5 @@
 import { WrongAddressError, ParseHexError } from 'src/errors';
-import { Base64 } from '@tonconnect/protocol';
+import { Base64 } from '@b2data/tonconnect-protocol';
 
 const noBounceableTag = 0x51;
 const testOnlyTag = 0x80;

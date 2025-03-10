@@ -10,12 +10,12 @@ See the example of sdk usage [here](https://github.com/ton-connect/demo-dapp).
 ## Installation with cdn
 Add the script to your HTML file:
 ```html
-<script src="https://unpkg.com/@tonconnect/sdk@latest/dist/tonconnect-sdk.min.js"></script>
+<script src="https://unpkg.com/@b2data/tonconnect-sdk@latest/dist/tonconnect-sdk.min.js"></script>
 ```
 
 ℹ️ If you don't want auto-update the library, pass concrete version instead of `latest`, e.g. 
 ```html
-<script src="https://unpkg.com/@tonconnect/sdk@0.0.34/dist/tonconnect-sdk.min.js"></script>
+<script src="https://unpkg.com/@b2data/tonconnect-sdk@0.0.34/dist/tonconnect-sdk.min.js"></script>
 ```
 
 You can find `TonConnect` in global variable `TonConnectSDK`, e.g.
@@ -26,13 +26,13 @@ You can find `TonConnect` in global variable `TonConnectSDK`, e.g.
 ```
 
 ## Installation with npm
-`npm i @tonconnect/sdk`
+`npm i @b2data/tonconnect-sdk`
 
 # Usage
 ## Init connector and call restoreConnection. If user connected his wallet before, connector will restore the connection
 
 ```ts
-import TonConnect from '@tonconnect/sdk';
+import TonConnect from '@b2data/tonconnect-sdk';
 
 const connector = new TonConnect();
 
@@ -113,7 +113,7 @@ import {
     isWalletInfoCurrentlyInjected,
     isWalletInfoRemote,
     WalletInfo
-} from '@tonconnect/sdk';
+} from '@b2data/tonconnect-sdk';
 
 /* Use for filtration */
 const remoteConnectionWalletInfos = walletInfoList.filter(isWalletInfoRemote);
@@ -193,7 +193,7 @@ You should detect working environment of the app and show appropriate UI.
 Check `embedded` property in elements of the wallets list to detect if the app is opened inside a wallet.
 
 ```ts
-import { isWalletInfoCurrentlyEmbedded, WalletInfoCurrentlyEmbedded } from '@tonconnect/sdk';
+import { isWalletInfoCurrentlyEmbedded, WalletInfoCurrentlyEmbedded } from '@b2data/tonconnect-sdk';
 
 // "connect button" click handler.
 // Execute this before show wallet selection modal.
@@ -263,7 +263,7 @@ parameter to make it 'testnet only' (disabled by default).
 
 
 ```ts
-import { toUserFriendlyAddress } from '@tonconnect/sdk';
+import { toUserFriendlyAddress } from '@b2data/tonconnect-sdk';
 
 const rawAddress = connector.wallet.account.address; // like '0:abcdef123456789...'
 const bouncableUserFriendlyAddress = toUserFriendlyAddress(rawAddress);
@@ -314,7 +314,7 @@ connector.onStatusChange(wallet => {
 You can use the SDK in frontend apps and in backend apps created with NodeJS. 
 
 ## Installation
-`npm i @tonconnect/sdk`
+`npm i @b2data/tonconnect-sdk`
 
 ## Init connector
 When you use the SDK in backend, you have to pass `manifestUrl` and `IStorage` implementation to the TonConnect constructor.
@@ -322,7 +322,7 @@ When you use the SDK in backend, you have to pass `manifestUrl` and `IStorage` i
 [See more about the manifest](##add-the-tonconnect-manifest).
 
 ```ts
-import TonConnect from '@tonconnect/sdk';
+import TonConnect from '@b2data/tonconnect-sdk';
 
 const storage: IStorage = <your implementation of the IStorage>
 
@@ -388,7 +388,7 @@ window.addEventListener('ton-connect-transaction-sent-for-signature', (event) =>
 You can use your custom event dispatcher to track user actions. To do this, you need to pass the `eventDispatcher` to the TonConnect constructor:
 
 ```typescript
-import {TonConnect, EventDispatcher, SdkActionEvent} from '@tonconnect/sdk';
+import {TonConnect, EventDispatcher, SdkActionEvent} from '@b2data/tonconnect-sdk';
 
 class CustomEventDispatcher implements EventDispatcher<SdkActionEvent> {
     public async dispatchEvent(
@@ -418,7 +418,7 @@ Module not found: Can't resolve 'encoding' in '.../node_modules/node-fetch/lib'
 Import trace for requested module:
 ./node_modules/node-fetch/lib/index.js
 ./node_modules/@tonconnect/isomorphic-fetch/index.mjs
-./node_modules/@tonconnect/sdk/lib/esm/index.mjs
+./node_modules/@b2data/tonconnect-sdk/lib/esm/index.mjs
 ```
 
 Please note that this is just a warning and should not affect the functionality of your application. If you wish to suppress the warning, you have two options:

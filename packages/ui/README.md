@@ -17,12 +17,12 @@ You can find more details and the protocol specification in the [docs](https://d
 ## Installation with cdn
 Add the script to your HTML file:
 ```html
-<script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+<script src="https://unpkg.com/@b2data/tonconnect-ui@latest/dist/tonconnect-ui.min.js"></script>
 ```
 
 ℹ️ If you don't want auto-update the library, pass concrete version instead of `latest`, e.g.
 ```html
-<script src="https://unpkg.com/@tonconnect/ui@0.0.9/dist/tonconnect-ui.min.js"></script>
+<script src="https://unpkg.com/@b2data/tonconnect-ui@0.0.9/dist/tonconnect-ui.min.js"></script>
 ```
 
 You can find `TonConnectUI` in global variable `TON_CONNECT_UI`, e.g.
@@ -37,13 +37,13 @@ You can find `TonConnectUI` in global variable `TON_CONNECT_UI`, e.g.
 
 
 ## Installation with npm
-`npm i @tonconnect/ui`
+`npm i @b2data/tonconnect-ui`
 
 # Usage
 
 ## Create TonConnectUI instance
 ```ts
-import TonConnectUI from '@tonconnect/ui'
+import TonConnectUI from '@b2data/tonconnect-ui'
 
 const tonConnectUI = new TonConnectUI({
     manifestUrl: 'https://<YOUR_APP_URL>/tonconnect-manifest.json',
@@ -498,7 +498,7 @@ tonConnectUI.uiOptions = {
 You can set fixed theme: `'THEME.LIGHT'` or `'THEME.DARK'`, or use system theme. Default theme is system.
 
 ```ts
-import { THEME } from '@tonconnect/ui';
+import { THEME } from '@b2data/tonconnect-ui';
 
 tonConnectUI.uiOptions = {
         uiPreferences: {
@@ -518,7 +518,7 @@ tonConnectUI.uiOptions = {
 
 You can set theme in the constructor if needed:
 ```ts
-import { THEME } from '@tonconnect/ui';
+import { THEME } from '@b2data/tonconnect-ui';
 
 const tonConnectUI = new TonConnectUI({
     manifestUrl: 'https://<YOUR_APP_URL>/tonconnect-manifest.json',
@@ -569,7 +569,7 @@ tonConnectUI.uiOptions = {
 
 You can set colors scheme in the constructor if needed:
 ```ts
-import { THEME } from '@tonconnect/ui';
+import { THEME } from '@b2data/tonconnect-ui';
 
 const tonConnectUI = new TonConnectUI({
     manifestUrl: 'https://<YOUR_APP_URL>/tonconnect-manifest.json',
@@ -668,7 +668,7 @@ Pass custom wallets array to extend the wallets list. Passed wallets will be add
 
 You can define custom wallet with `jsBridgeKey` (wallet = browser extension or there is a wallet dapp browser) or with `bridgeUrl` and `universalLink` pair (for http-connection compatible wallets), or pass all of these properties. 
 ```ts
-import { UIWallet } from '@tonconnect/ui';
+import { UIWallet } from '@b2data/tonconnect-ui';
 
 const customWallet: UIWallet = {
     name: '<CUSTOM_WALLET_NAME>',
@@ -783,7 +783,7 @@ window.addEventListener('ton-connect-ui-transaction-sent-for-signature', (event)
 You can use your custom event dispatcher to track user actions. To do this, you need to pass the `eventDispatcher` to the TonConnect constructor:
 
 ```typescript
-import { TonConnectUI, EventDispatcher, SdkActionEvent, UserActionEvent } from '@tonconnect/ui';
+import { TonConnectUI, EventDispatcher, SdkActionEvent, UserActionEvent } from '@b2data/tonconnect-ui';
 
 class CustomEventDispatcher implements EventDispatcher<UserActionEvent | SdkActionEvent> {
     public async dispatchEvent(
@@ -855,8 +855,8 @@ Module not found: Can't resolve 'encoding' in '.../node_modules/node-fetch/lib'
 Import trace for requested module:
 ./node_modules/node-fetch/lib/index.js
 ./node_modules/@tonconnect/isomorphic-fetch/index.mjs
-./node_modules/@tonconnect/sdk/lib/esm/index.mjs
-./node_modules/@tonconnect/ui/lib/esm/index.mjs
+./node_modules/@b2data/tonconnect-sdk/lib/esm/index.mjs
+./node_modules/@b2data/tonconnect-ui/lib/esm/index.mjs
 ```
 
 Please note that this is just a warning and should not affect the functionality of your application. If you wish to suppress the warning, you have two options:

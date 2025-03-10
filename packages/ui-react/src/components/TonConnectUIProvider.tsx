@@ -5,8 +5,8 @@ import {
     TonConnectUI,
     UIPreferences,
     WalletsListConfiguration
-} from '@tonconnect/ui';
-import type { ITonConnect } from '@tonconnect/ui';
+} from '@b2data/tonconnect-ui';
+import type { ITonConnect } from '@b2data/tonconnect-ui';
 import { isClientSide } from '../utils/web';
 
 export const TonConnectUIContext = createContext<TonConnectUI | null>(null);
@@ -22,11 +22,15 @@ export interface TonConnectUIProviderPropsWithManifest {
      * If not passed, manifest from `${window.location.origin}/tonconnect-manifest.json` will be taken.
      */
     manifestUrl: string;
+    /**
+     * Overwrite default wallets list source.
+     */
+    walletsListSource?: string;
 }
 
 export interface TonConnectUIProviderPropsWithConnector {
     /**
-     * TonConnect instance. Can be helpful if you use custom ITonConnect implementation, or use both of @tonconnect/sdk and @tonconnect/ui in your app.
+     * TonConnect instance. Can be helpful if you use custom ITonConnect implementation, or use both of @b2data/tonconnect-sdk and @b2data/tonconnect-ui in your app.
      */
     connector: ITonConnect;
 }

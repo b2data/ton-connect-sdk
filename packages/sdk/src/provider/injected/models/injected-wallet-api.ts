@@ -6,7 +6,7 @@ import {
     RpcMethod,
     WalletEvent,
     WalletResponse
-} from '@tonconnect/protocol';
+} from '@b2data/tonconnect-protocol';
 import { WalletInfoDTO } from 'src/models/wallet/wallet-info';
 import { hasProperties, hasProperty } from 'src/utils/types';
 

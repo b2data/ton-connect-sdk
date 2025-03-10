@@ -1,4 +1,4 @@
-import { ITonConnect } from '@tonconnect/sdk';
+import { ITonConnect } from '@b2data/tonconnect-sdk';
 import { createEffect } from 'solid-js';
 import { action, Action } from 'src/app/state/modals-state';
 

@@ -23,7 +23,7 @@ import {
     ResponseVersionEvent,
     Version,
     WithoutVersion
-} from '@tonconnect/sdk';
+} from '@b2data/tonconnect-sdk';
 
 export type TonConnectUITrackerOptions = {
     /**

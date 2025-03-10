@@ -4,7 +4,7 @@ import {
     WalletResponse,
     WalletResponseError,
     WalletResponseSuccess
-} from '@tonconnect/protocol';
+} from '@b2data/tonconnect-protocol';
 import { WithoutId } from 'src/utils/types';
 
 export abstract class RpcParser<T extends RpcMethod> {

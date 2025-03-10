@@ -13,7 +13,7 @@ import {
     openLinkBlank,
     toDeeplink
 } from 'src/app/utils/web-api';
-import { encodeTelegramUrlParameters, isTelegramUrl } from '@tonconnect/sdk';
+import { encodeTelegramUrlParameters, isTelegramUrl } from '@b2data/tonconnect-sdk';
 
 /**
  * Adds a return strategy to a url.

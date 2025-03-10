@@ -1,4 +1,4 @@
-import { ConnectAdditionalRequest } from '@tonconnect/sdk';
+import { ConnectAdditionalRequest } from '@b2data/tonconnect-sdk';
 import {
     Component,
     createEffect,

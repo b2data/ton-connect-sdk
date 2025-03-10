@@ -1,4 +1,4 @@
-import { EventDispatcher, ITonConnect, SdkActionEvent } from '@tonconnect/sdk';
+import { EventDispatcher, ITonConnect, SdkActionEvent } from '@b2data/tonconnect-sdk';
 import { TonConnectUiOptions } from 'src/models/ton-connect-ui-options';
 import { UserActionEvent } from 'src/tracker/types';
 
@@ -12,11 +12,15 @@ export interface TonConnectUiOptionsWithManifest extends TonConnectUiCreateOptio
      * If not passed, manifest from `${window.location.origin}/tonconnect-manifest.json` will be taken.
      */
     manifestUrl?: string;
+    /**
+     * Overwrite default wallets list source.
+     */
+    walletsListSource?: string;
 }
 
 export interface TonConnectUiOptionsWithConnector extends TonConnectUiCreateOptionsBase {
     /**
-     * TonConnect instance. Can be helpful if you use custom ITonConnect implementation, or use both of @tonconnect/sdk and @tonconnect/ui in your app.
+     * TonConnect instance. Can be helpful if you use custom ITonConnect implementation, or use both of @b2data/tonconnect-sdk and @b2data/tonconnect-ui in your app.
      */
     connector?: ITonConnect;
 }
