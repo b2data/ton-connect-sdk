@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "version": "2.0.20",
+  "version": "2.0.21",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build"
@@ -55,7 +55,7 @@
     "vite-plugin-dts": "^1.7.1"
   },
   "dependencies": {
-    "@b2data/tonconnect-ui": "2.0.20"
+    "@b2data/tonconnect-ui": "2.0.21"
   },
   "peerDependencies": {
     "react": ">=19.0.0",
