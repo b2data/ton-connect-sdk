@@ -1,5 +1,9 @@
 # Changelog @b2data/tonconnect-protocol 
 
+## [2.2.9](https://github.com/b2data/ton-connect-sdk/compare/protocol-2.2.8...protocol-2.2.9) (2025-03-19)
+
+
+
 ## [2.2.8](https://github.com/b2data/ton-connect-sdk/compare/protocol-2.2.7...protocol-2.2.8) (2025-03-09)
 
 
