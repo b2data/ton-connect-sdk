@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "version": "2.0.26",
+  "version": "2.0.27",
   "scripts": {
     "start": "vite --host",
     "dev": "vite",
