@@ -6,7 +6,8 @@ import {
     UIPreferences,
     WalletsListConfiguration
 } from '@b2data/tonconnect-ui';
-import type { ITonConnect } from '@b2data/tonconnect-ui';
+import type { ITonConnect, RequiredFeatures } from '@b2data/tonconnect-ui';
+
 import { isClientSide } from '../utils/web';
 
 export const TonConnectUIContext = createContext<TonConnectUI | null>(null);
@@ -63,6 +64,11 @@ export interface TonConnectUIProviderPropsBase {
      * Configuration for the wallets list in the connect wallet modal.
      */
     walletsListConfiguration?: WalletsListConfiguration;
+
+    /**
+     * Required features for wallets to be displayed in the connect wallet modal.
+     */
+    walletsRequiredFeatures?: RequiredFeatures;
 
     /**
      * Configuration for action-period (e.g. sendTransaction) UI elements: modals and notifications and wallet behaviour (return strategy).

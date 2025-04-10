@@ -1,6 +1,7 @@
 import type {
     Account,
     ConnectAdditionalRequest,
+    RequiredFeatures,
     WalletInfoCurrentlyEmbedded
 } from '@b2data/tonconnect-sdk';
 import {
@@ -70,6 +71,8 @@ export class TonConnectUI {
     private actionsConfiguration?: ActionConfiguration;
 
     private readonly walletsList: Promise<WalletInfo[]>;
+
+    public readonly walletsRequiredFeatures?: RequiredFeatures;
 
     private connectRequestParametersCallback?: (
         parameters: ConnectAdditionalRequest | undefined
@@ -204,8 +207,9 @@ export class TonConnectUI {
         } else if (options && 'manifestUrl' in options && options.manifestUrl) {
             this.connector = new TonConnect({
                 manifestUrl: options.manifestUrl,
-                eventDispatcher: options?.eventDispatcher,
-                walletsListSource: options?.walletsListSource
+                eventDispatcher: options.eventDispatcher,
+                walletsListSource: options?.walletsListSource,
+                walletsRequiredFeatures: options.walletsRequiredFeatures
             });
         } else {
             throw new TonConnectUIError(
@@ -245,6 +249,8 @@ export class TonConnectUI {
         this.signDataModal = new SignDataModalManager({
             connector: this.connector
         });
+
+        this.walletsRequiredFeatures = options.walletsRequiredFeatures;
 
         this.walletsList = this.getWallets();
 
@@ -442,7 +448,7 @@ export class TonConnectUI {
             sendExpand();
         }
 
-        const { notifications, modals, returnStrategy, twaReturnUrl, skipRedirectToWallet } =
+        const { notifications, modals, returnStrategy, twaReturnUrl } =
             this.getModalsAndNotificationsConfiguration(options);
 
         widgetController.setAction({
