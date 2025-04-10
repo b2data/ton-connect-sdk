@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "version": "2.0.28",
+  "version": "2.2.0",
   "scripts": {
     "start": "vite --host",
     "dev": "vite",
@@ -50,7 +50,7 @@
     }
   },
   "dependencies": {
-    "@b2data/tonconnect-sdk": "3.0.13",
+    "@b2data/tonconnect-sdk": "3.2.0",
     "classnames": "^2.3.2",
     "deepmerge": "^4.2.2",
     "ua-parser-js": "^1.0.35",
