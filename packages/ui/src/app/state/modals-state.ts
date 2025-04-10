@@ -26,7 +26,7 @@ export type ConfirmSignDataAction = BasicAction & {
     name: 'confirm-data';
     returnStrategy: ReturnStrategy;
     twaReturnUrl: `${string}://${string}`;
-    signed: boolean;
+    sent: boolean;
 }
 
 export const [walletsModalState, setWalletsModalState] = createSignal<WalletsModalState>({

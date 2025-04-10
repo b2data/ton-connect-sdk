@@ -24,7 +24,7 @@ export const ConfirmDataModal: Component<ConfirmDataModalProps> = props => {
             icon={<LoaderIcon size="m" />}
             onClose={() => props.onClose()}
             showButton="open-wallet"
-            data-tc-confirm-modal="true"
+            data-tc-sign-data-confirm-modal="true"
         />
     );
 };

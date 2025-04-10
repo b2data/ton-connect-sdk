@@ -20,7 +20,7 @@ const signDataErrors: Partial<Record<CONNECT_EVENT_ERROR_CODES, typeof TonConnec
 
 class SignDataParser extends RpcParser<'signData'> {
   convertToRpcRequest(
-      request: SignDataRequest 
+    request: SignDataRequest 
   ): WithoutId<SignDataRpcRequest> {
       return {
           method: 'signData',
@@ -42,8 +42,7 @@ class SignDataParser extends RpcParser<'signData'> {
       rpcResponse: WithoutId<SignDataRpcResponseSuccess>
   ): SignDataResponse {
       return {
-          signature: rpcResponse.result.signature,
-          timestamp: rpcResponse.result.timestamp
+          signatures: rpcResponse.result.signatures
       };
   }
 }

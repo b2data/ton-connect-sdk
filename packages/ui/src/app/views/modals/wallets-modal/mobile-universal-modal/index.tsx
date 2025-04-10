@@ -37,8 +37,10 @@ export const MobileUniversalModal: Component<MobileUniversalModalProps> = props 
     const [universalLink, setUniversalLink] = createSignal<string | null>(null);
     const connector = appState.connector;
     const walletsList = (): WalletInfo[] =>
-        props.walletsList.filter(w => supportsMobile(w) && w.appName !== AT_WALLET_APP_NAME);
+        props.walletsList.filter(w => supportsMobile(w) && !w.appName.includes(AT_WALLET_APP_NAME));
     const shouldShowMoreButton = (): boolean => walletsList().length > 7;
+
+    const atWallet = props.walletsList.find(wallet => wallet.appName.includes(AT_WALLET_APP_NAME));
 
     const walletsBridges = createMemo(() => getUniqueBridges(props.walletsList), null, {
         equals: bridgesIsEqual
@@ -89,7 +91,6 @@ export const MobileUniversalModal: Component<MobileUniversalModalProps> = props 
     const onSelectTelegram = (): void => {
         setUniversalLink(null);
 
-        const atWallet = props.walletsList.find(wallet => wallet.appName === AT_WALLET_APP_NAME);
         if (!atWallet || !isWalletInfoRemote(atWallet)) {
             throw new TonConnectUIError('@wallet bot not found in the wallets list');
         }
@@ -144,6 +145,7 @@ export const MobileUniversalModal: Component<MobileUniversalModalProps> = props 
                 </H1Styled>
                 <H2Styled
                     translationKey="walletModal.mobileUniversalModal.openWalletOnTelegramOrSelect"
+                    translationValues={{ name: atWallet?.name || 'Wallet' }}
                     maxWidth={320}
                 >
                     Use Wallet in Telegram or choose other application
@@ -154,43 +156,52 @@ export const MobileUniversalModal: Component<MobileUniversalModalProps> = props 
                     onClick={onSelectTelegram}
                     scale="s"
                 >
-                    <Translation translationKey="walletModal.mobileUniversalModal.openWalletOnTelegram">
+                    <Translation
+                        translationKey="walletModal.mobileUniversalModal.openWalletOnTelegram"
+                        translationValues={{ name: atWallet?.name || 'Wallet' }}
+                    >
                         Connect Wallet in Telegram
                     </Translation>
                 </TelegramButtonStyled>
-                <H2Styled
-                    translationKey="walletModal.mobileUniversalModal.chooseOtherApplication"
-                    maxWidth={342}
-                    padding={'0 24px 8px 24px'}
-                    margin={'0'}
-                >
-                    Choose other application
-                </H2Styled>
-                <WalletUlContainer>
-                    <For each={shouldShowMoreButton() ? walletsList().slice(0, 3) : walletsList()}>
-                        {wallet => (
+                <Show when={walletsList().length}>
+                    <H2Styled
+                        translationKey="walletModal.mobileUniversalModal.chooseOtherApplication"
+                        maxWidth={342}
+                        padding={'0 24px 8px 24px'}
+                        margin={'0'}
+                    >
+                        Choose other application
+                    </H2Styled>
+                    <WalletUlContainer>
+                        <For
+                            each={
+                                shouldShowMoreButton() ? walletsList().slice(0, 3) : walletsList()
+                            }
+                        >
+                            {wallet => (
+                                <li>
+                                    <WalletItem
+                                        icon={wallet.imageUrl}
+                                        name={wallet.name}
+                                        onClick={() => props.onSelect(wallet)}
+                                    />
+                                </li>
+                            )}
+                        </For>
+                        <Show when={shouldShowMoreButton()}>
                             <li>
-                                <WalletItem
-                                    icon={wallet.imageUrl}
-                                    name={wallet.name}
-                                    onClick={() => props.onSelect(wallet)}
+                                <FourWalletsItem
+                                    labelLine1="View all"
+                                    labelLine2="wallets"
+                                    images={walletsList()
+                                        .slice(3, 7)
+                                        .map(i => i.imageUrl)}
+                                    onClick={() => props.onSelectAllWallets()}
                                 />
                             </li>
-                        )}
-                    </For>
-                    <Show when={shouldShowMoreButton()}>
-                        <li>
-                            <FourWalletsItem
-                                labelLine1="View all"
-                                labelLine2="wallets"
-                                images={walletsList()
-                                    .slice(3, 7)
-                                    .map(i => i.imageUrl)}
-                                onClick={() => props.onSelectAllWallets()}
-                            />
-                        </li>
-                    </Show>
-                </WalletUlContainer>
+                        </Show>
+                    </WalletUlContainer>
+                </Show>
             </Show>
         </div>
     );

@@ -21,7 +21,7 @@ import { TonConnectUIError } from 'src/errors/ton-connect-ui.error';
 import { TonConnectUiCreateOptions } from 'src/models/ton-connect-ui-create-options';
 import { PreferredWalletStorage, WalletInfoStorage } from 'src/storage';
 import {
-    createMacrotask, createMacrotaskAsync,
+    createMacrotaskAsync,
     getSystemTheme,
     preloadImages,
     subscribeToThemeChange
@@ -205,7 +205,7 @@ export class TonConnectUI {
             this.connector = new TonConnect({
                 manifestUrl: options.manifestUrl,
                 eventDispatcher: options?.eventDispatcher,
-                walletsListSource: options?.walletsListSource,
+                walletsListSource: options?.walletsListSource
             });
         } else {
             throw new TonConnectUIError(
@@ -416,6 +416,13 @@ export class TonConnectUI {
     }
 
     /**
+     * Clears current action.
+     */
+    public clearAction(): void {
+        widgetController.clearAction();
+    }
+
+    /**
      * Opens the modal window and handles the transaction sending.
      * @param tx transaction to send.
      * @param options modal and notifications behaviour settings. Default is show only 'before' modal and all notifications.
@@ -559,7 +566,7 @@ export class TonConnectUI {
             name: 'confirm-data',
             showNotification: notifications.includes('before'),
             openModal: modals.includes('before'),
-            signed: false
+            sent: false
         });
 
         const onRequestSent = (): void => {
@@ -571,7 +578,7 @@ export class TonConnectUI {
                 name: 'confirm-data',
                 showNotification: notifications.includes('before'),
                 openModal: modals.includes('before'),
-                signed: true
+                sent: true
             });
 
             if (
@@ -853,17 +860,11 @@ export class TonConnectUI {
             const { data, signal } = options;
 
             if (signal.aborted) {
-                this.tracker.trackDataSigningFailed(
-                    this.wallet,
-                    data,
-                    'Sign data was cancelled'
-                );
+                this.tracker.trackDataSigningFailed(this.wallet, data, 'Sign data was cancelled');
                 return reject(new TonConnectUIError('data was not sent'));
             }
 
-            const onDataHandler = async (
-                response: SignDataResponse
-            ): Promise<void> => {
+            const onDataHandler = async (response: SignDataResponse): Promise<void> => {
                 resolve(response);
             };
 
@@ -872,11 +873,7 @@ export class TonConnectUI {
             };
 
             const onCanceledHandler = (): void => {
-                this.tracker.trackDataSigningFailed(
-                    this.wallet,
-                    data,
-                    'data was cancelled'
-                );
+                this.tracker.trackDataSigningFailed(this.wallet, data, 'data was cancelled');
                 reject(new TonConnectUIError('data was not sent'));
             };
 

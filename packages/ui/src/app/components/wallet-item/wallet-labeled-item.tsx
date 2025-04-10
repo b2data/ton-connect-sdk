@@ -16,7 +16,7 @@ export const WalletLabeledItem: Component<WalletLabeledItemProps> = props => {
     const [t] = useI18n();
 
     const walletsSecondLine = (): string | undefined => {
-        if (props.wallet.appName === AT_WALLET_APP_NAME) {
+        if (props.wallet.appName.includes(AT_WALLET_APP_NAME)) {
             return undefined;
         }
         if ('isPreferred' in props.wallet && props.wallet.isPreferred) {
@@ -33,10 +33,13 @@ export const WalletLabeledItem: Component<WalletLabeledItemProps> = props => {
 
     return (
         <>
-            {props.wallet.appName === AT_WALLET_APP_NAME ? (
+            {props.wallet.appName.includes(AT_WALLET_APP_NAME) ? (
                 <WalletItem
                     icon={props.wallet.imageUrl}
-                    name={t('walletItem.walletOn', {}, 'Wallet in')}
+                    name={t('walletItem.walletOn', {}, 'Wallet in').replace(
+                        'Wallet',
+                        props.wallet.name
+                    )}
                     secondLine="Telegram"
                     badgeUrl={IMG.TG}
                     onClick={() => props.onClick()}

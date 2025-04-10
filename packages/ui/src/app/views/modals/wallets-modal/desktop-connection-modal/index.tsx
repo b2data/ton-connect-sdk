@@ -72,7 +72,7 @@ export const DesktopConnectionModal: Component<DesktopConnectionProps> = props =
     const unsubscribe = connector.onStatusChange(
         () => {},
         () => {
-            if (props.wallet.appName !== AT_WALLET_APP_NAME) {
+            if (!props.wallet.appName.includes(AT_WALLET_APP_NAME)) {
                 setConnectionErrored(true);
             }
         }
@@ -285,18 +285,21 @@ export const DesktopConnectionModal: Component<DesktopConnectionProps> = props =
                 </Switch>
             </BodyStyled>
 
-            <Show when={props.wallet.appName === AT_WALLET_APP_NAME}>
+            <Show when={props.wallet.appName.includes(AT_WALLET_APP_NAME)}>
                 <TgButtonStyled
                     rightIcon={<TgImageStyled src={IMG.TG} />}
                     scale="s"
                     onClick={onClickTelegram}
                 >
-                    <Translation translationKey="walletModal.desktopConnectionModal.openWalletOnTelegram">
+                    <Translation
+                        translationKey="walletModal.desktopConnectionModal.openWalletOnTelegram"
+                        translationValues={{ name: props.wallet.name }}
+                    >
                         Open Wallet in Telegram on desktop
                     </Translation>
                 </TgButtonStyled>
             </Show>
-            <Show when={props.wallet.appName !== AT_WALLET_APP_NAME}>
+            <Show when={!props.wallet.appName.includes(AT_WALLET_APP_NAME)}>
                 <BottomButtonsContainerStyled>
                     <Show when={mode() !== 'mobile' && supportsMobile(props.wallet)}>
                         <FooterButton

@@ -13,7 +13,7 @@ export const SignDataCanceledModal: Component<SignDataCanceledModalProps> = prop
             textTranslationKey="actionModal.signDataCanceled.text"
             icon={<ErrorIcon size="m" />}
             onClose={() => props.onClose()}
-            data-tc-transaction-canceled-modal="true"
+            data-tc-sign-data-canceled-modal="true"
         />
     );
 };

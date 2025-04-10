@@ -12,7 +12,7 @@ export const StyledModal = styled(Modal)`
         padding-left: 0;
         padding-right: 0;
 
-        min-height: 364px;
+        min-height: 264px;
     }
 `;
 

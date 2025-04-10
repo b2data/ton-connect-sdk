@@ -526,7 +526,7 @@ export type SignDataInfo = {
     /**
      * Cell to sign.
      */
-    cell: string;
+    cells: string[];
     /**
      * Sender public key.
      */
@@ -539,7 +539,7 @@ function createSignDataInfo(
 ): SignDataInfo {
     return {
         schema_crc: signData.schema_crc,
-        cell: signData.cell,
+        cells: signData.cells,
         publicKey: wallet?.account?.publicKey ?? null
     };
 }
@@ -570,13 +570,9 @@ export type DataSignedEvent = {
      */
     is_success: true;
     /**
-     * Signed transaction.
+     * Signatures.
      */
-    signature: string;
-    /**
-     * Signed timestamp
-     */
-    timestamp: string;
+    signatures: SignDataResponse['signatures'];
 } & ConnectionInfo &
     SignDataInfo;
 
@@ -596,8 +592,7 @@ export function createDataSignedEvent(
     return {
         type: 'data-signed',
         is_success: true,
-        signature: signedData.signature,
-        timestamp: signedData.timestamp,
+        signatures: signedData.signatures,
         ...createConnectionInfo(version, wallet),
         ...createSignDataInfo(wallet, signDataRequest)
     };

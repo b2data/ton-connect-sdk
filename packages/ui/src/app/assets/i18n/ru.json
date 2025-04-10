@@ -33,11 +33,11 @@
       "text": "Состояние вашего счёта не изменится."
     },
     "signDataSent": {
-      "header": "Sign Data sent",
-      "text": "Ваша транзакция будет обработана через несколько секунд."
+      "header": "Подписание данных отправлено",
+      "text": "Ваша операция будет обработана через несколько секунд."
     },
     "signDataCanceled": {
-      "header": "Sign Data canceled",
+      "header": "Подписание данных отменено",
       "text": "Состояние вашего счёта не изменится."
     }
   },
@@ -53,7 +53,7 @@
     "mobileUniversalModal": {
       "connectYourWallet": "Подключите TON кошелёк",
       "openWalletOnTelegramOrSelect": "Подключите Wallet в Telegram или выберете другое приложение",
-      "openWalletOnTelegram": "Открыть Wallet в Telegram",
+      "openWalletOnTelegram": "Открыть {{ name }} в Telegram",
       "chooseOtherApplication": "Выберите другое приложение",
       "openLink": "Открыть",
       "scan": "Отсканируйте камерой вашего телефона"
@@ -75,7 +75,7 @@
       "dontHaveExtension": "Похоже, у вас не установлено браузерное расширение {{ name }}",
       "getWallet": "Скачать {{ name }}",
       "continueOnDesktop": "Откройте {{ name }} на компьютере…",
-      "openWalletOnTelegram": "Открыть Wallet в Telegram",
+      "openWalletOnTelegram": "Открыть {{ name }} в Telegram",
       "connectionDeclined": "Подключение отклонено"
     },
     "infoModal": {
@@ -97,8 +97,8 @@
     "transactionSent": "$notifications.transactionSent",
     "transactionCanceled": "$notifications.transactionCanceled",
     "confirmSignData": {
-      "header": "Confirm data in {{ name }}",
-      "text": "It will only take a moment."
+      "header": "Подтвердите действие в {{ name }}",
+      "text": "Это займет пару секунд."
     },
     "signDataSent": "$notifications.signDataSent",
     "signDataCanceled": "$notifications.signDataCanceled"

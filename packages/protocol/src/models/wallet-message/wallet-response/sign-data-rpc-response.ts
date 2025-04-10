@@ -5,8 +5,10 @@ export type SignDataRpcResponse = SignDataRpcResponseSuccess | SignDataRpcRespon
 export interface SignDataRpcResponseSuccess {
     id: string;
     result: {
-        signature: string;
-        timestamp: string;
+        signatures: {
+            signature: string;
+            timestamp: string;
+        }[];
     };
 }
 

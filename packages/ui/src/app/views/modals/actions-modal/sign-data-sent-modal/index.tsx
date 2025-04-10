@@ -13,7 +13,7 @@ export const SignDataSentModal: Component<SignDataSentModalProps> = props => {
             textTranslationKey="actionModal.signDataSent.text"
             icon={<SuccessIcon size="m" />}
             onClose={() => props.onClose()}
-            data-tc-transaction-sent-modal="true"
+            data-tc-sign-data-sent-modal="true"
         />
     );
 };

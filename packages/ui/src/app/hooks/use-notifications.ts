@@ -46,8 +46,9 @@ export function useOpenedNotifications(
                 return;
             }
             if (
-                latestAction()?.name === 'confirm-transaction' &&
-                action.name === 'confirm-transaction'
+                (latestAction()?.name === 'confirm-transaction' &&
+                    action.name === 'confirm-transaction') ||
+                (latestAction()?.name === 'confirm-data' && action.name === 'confirm-data')
             ) {
                 return;
             }
@@ -56,7 +57,9 @@ export function useOpenedNotifications(
 
             // cleanup all not confirmed transactions
             setOpenedNotifications(openedNotifications =>
-                openedNotifications.filter(n => n.action !== 'confirm-transaction')
+                openedNotifications.filter(
+                    n => !['confirm-transaction', 'confirm-data'].includes(n.action)
+                )
             );
 
             // create notification
