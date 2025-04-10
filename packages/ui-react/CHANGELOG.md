@@ -1,5 +1,9 @@
 # Changelog @b2data/tonconnect-ui-react 
 
+## [2.0.27](https://github.com/b2data/ton-connect-sdk/compare/ui-react-2.0.26...ui-react-2.0.27) (2025-04-10)
+
+
+
 ## [2.0.26](https://github.com/b2data/ton-connect-sdk/compare/ui-react-2.0.25...ui-react-2.0.26) (2025-03-20)
 
 
