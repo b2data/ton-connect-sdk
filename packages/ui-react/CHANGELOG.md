@@ -1,5 +1,40 @@
 # Changelog @b2data/tonconnect-ui-react 
 
+# [2.2.0](https://github.com/b2data/ton-connect-sdk/compare/ui-react-2.0.28...ui-react-2.2.0) (2025-04-10)
+
+
+
+## [2.1.1-beta.0](https://github.com/b2data/ton-connect-sdk/compare/ui-react-2.1.0...ui-react-2.1.1-beta.0) (2025-03-27)
+
+
+
+# [2.1.0](https://github.com/b2data/ton-connect-sdk/compare/ui-react-2.0.26...ui-react-2.1.0) (2025-03-24)
+
+
+### Features
+
+* **ui-react:** refactor wallet required features from array to object structure ([083af0c](https://github.com/b2data/ton-connect-sdk/commit/083af0c136acea37f08616c3a1ab71b208d95e2f))
+
+
+
+## [2.0.13-beta.1](https://github.com/b2data/ton-connect-sdk/compare/ui-react-2.0.13-beta.0...ui-react-2.0.13-beta.1) (2025-03-18)
+
+
+### Features
+
+* **ui-react:** add support for required features ([d935402](https://github.com/b2data/ton-connect-sdk/commit/d935402b9d270ff20e59c1b45d7f9f558a4bb9ad))
+
+
+
+## [2.0.13-beta.0](https://github.com/b2data/ton-connect-sdk/compare/ui-react-2.0.17...ui-react-2.0.13-beta.0) (2025-03-14)
+
+
+### Features
+
+* **ui-react:** add support for react 19 and preact while maintaining backward compatibility ([cf7cc52](https://github.com/b2data/ton-connect-sdk/commit/cf7cc52c853437965c4255074af54381cafffa43))
+
+
+
 ## [2.0.28](https://github.com/b2data/ton-connect-sdk/compare/ui-react-2.0.27...ui-react-2.0.28) (2025-04-10)
 
 
