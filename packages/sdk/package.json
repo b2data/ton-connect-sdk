@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "version": "3.0.13",
+  "version": "3.2.0",
   "scripts": {
     "build": "npx rimraf types-dist && npx rimraf lib && npx rollup -c rollup.config.mjs && ttsc --project tsconfig.declarations.json && api-extractor run && npx rimraf types-dist && npx rimraf dist && npx webpack --config webpack.config.js",
     "test": "vitest run"
@@ -29,7 +29,7 @@
   "dependencies": {
     "@tonconnect/isomorphic-eventsource": "^0.0.2",
     "@tonconnect/isomorphic-fetch": "^0.0.3",
-    "@b2data/tonconnect-protocol": "^2.2.7"
+    "@b2data/tonconnect-protocol": "^2.3.0"
   },
   "files": [
     "lib",
