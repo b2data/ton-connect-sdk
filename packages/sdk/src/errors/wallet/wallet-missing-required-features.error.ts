@@ -1,4 +1,4 @@
-import { ConnectEventSuccess } from '@tonconnect/protocol';
+import { ConnectEventSuccess } from '@b2data/tonconnect-protocol';
 import { TonConnectError } from 'src/errors/ton-connect.error';
 
 /**

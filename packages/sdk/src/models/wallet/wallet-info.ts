@@ -1,4 +1,4 @@
-import { Feature } from "@tonconnect/protocol";
+import { Feature } from "@b2data/tonconnect-protocol";
 
 /**
  * Common information for injectable and http-compatible wallets.

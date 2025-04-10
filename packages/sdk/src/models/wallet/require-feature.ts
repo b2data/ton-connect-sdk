@@ -6,6 +6,10 @@ export type RequiredFeatures = {
      * Required features for the send transaction feature.
      */
     sendTransaction?: RequiredSendTransactionFeature;
+    /**
+     * Required features for the sign data feature.
+     */
+    singData?: RequiredSignDataFeature;
 };
 
 /**
@@ -22,3 +26,8 @@ export type RequiredSendTransactionFeature = {
      */
     extraCurrencyRequired?: boolean;
 };
+
+/**
+ * Required features for the sign data feature.
+ */
+export type RequiredSignDataFeature = boolean;

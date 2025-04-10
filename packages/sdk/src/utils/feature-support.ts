@@ -7,10 +7,9 @@ export function checkSendTransactionSupport(
     features: Feature[],
     options: { requiredMessagesNumber: number; requireExtraCurrencies: boolean }
 ): never | void {
-    const supportsDeprecatedSendTransactionFeature = features.includes('SendTransaction');
     const sendTransactionFeature = findFeature(features, 'SendTransaction');
 
-    if (!supportsDeprecatedSendTransactionFeature && !sendTransactionFeature) {
+    if (!sendTransactionFeature) {
         throw new WalletNotSupportFeatureError("Wallet doesn't support SendTransaction feature.");
     }
 
@@ -37,12 +36,9 @@ export function checkSendTransactionSupport(
 }
 
 export function checkSignDataSupport(features: Feature[]): never | void {
-    const supportsDeprecatedSignDataFeature = features.includes('SignData');
-    const signDataFeature = features.find(
-        feature => feature && typeof feature === 'object' && feature.name === 'SendTransaction'
-    ) as SendTransactionFeature;
+    const signDataFeature = findFeature(features, 'SignData');
 
-    if (!supportsDeprecatedSignDataFeature && !signDataFeature) {
+    if (!signDataFeature) {
         throw new WalletNotSupportFeatureError("Wallet doesn't support SignData feature.");
     }
 
@@ -59,7 +55,7 @@ export function checkRequiredWalletFeatures(
         return true;
     }
 
-    const { sendTransaction } = walletsRequiredFeatures;
+    const { sendTransaction, singData } = walletsRequiredFeatures;
 
     if (sendTransaction) {
         const feature = findFeature(features, 'SendTransaction');
@@ -68,6 +64,13 @@ export function checkRequiredWalletFeatures(
         }
 
         if (!checkSendTransaction(feature, sendTransaction)) {
+            return false;
+        }
+    }
+
+    if (singData) {
+        const feature = findFeature(features, 'SignData');
+        if (!feature) {
             return false;
         }
     }

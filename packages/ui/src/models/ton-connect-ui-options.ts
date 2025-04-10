@@ -2,7 +2,7 @@ import { Locales } from 'src/models/locales';
 import { UIPreferences } from 'src/models/ui-preferences';
 import { WalletsListConfiguration } from 'src/models/wallets-list-configuration';
 import { ActionConfiguration } from 'src/models/action-configuration';
-import { RequiredFeatures } from '@tonconnect/sdk';
+import { RequiredFeatures } from '@b2data/tonconnect-sdk';
 
 export interface TonConnectUiOptions {
     /**

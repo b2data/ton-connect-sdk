@@ -1,7 +1,7 @@
 export type Feature =
-    | SendTransactionFeatureDeprecated
+    // | SendTransactionFeatureDeprecated
     | SendTransactionFeature
-    | SignDataFeatureDeprecated
+    // | SignDataFeatureDeprecated
     | SignDataFeature;
 
 export type SendTransactionFeatureDeprecated = 'SendTransaction';
