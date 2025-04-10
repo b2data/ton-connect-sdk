@@ -1,9 +1,6 @@
 {
-  "name": "@b2data/tonconnect-ui-react",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
-  "version": "2.0.15",
+  "name": "@tonconnect/ui-react",
+  "version": "2.1.1-beta.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build"
@@ -44,18 +41,18 @@
     }
   },
   "devDependencies": {
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "@vitejs/plugin-react": "^3.0.0",
-    "typescript": "^4.9.3",
-    "vite": "^4.0.0",
-    "eslint-plugin-react": "^7.31.11",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
     "csstype": "^3.1.1",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "typescript": "^4.9.3",
+    "vite": "^6.2.2",
     "vite-plugin-dts": "^1.7.1"
   },
   "dependencies": {
-    "@b2data/tonconnect-ui": "2.0.15"
+    "@tonconnect/ui": "2.1.1-beta.0"
   },
   "peerDependencies": {
     "react": ">=19.0.0",
