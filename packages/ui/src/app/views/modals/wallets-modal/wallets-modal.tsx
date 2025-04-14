@@ -50,7 +50,7 @@ export const WalletsModal: Component = () => {
             updateIsMobile();
         } else {
             setSelectedWalletInfo(null);
-            setSelectedTab('universal');
+            setSelectedTab('all-wallets');
             setInfoTab(false);
         }
     });
@@ -63,7 +63,7 @@ export const WalletsModal: Component = () => {
     const [selectedWalletError, setSelectedWalletError] = createSignal<
         'missing-features' | 'not-supported' | null
     >(null);
-    const [selectedTab, setSelectedTab] = createSignal<'universal' | 'all-wallets'>('universal');
+    const [selectedTab, setSelectedTab] = createSignal<'universal' | 'all-wallets'>('all-wallets');
     const [infoTab, setInfoTab] = createSignal(false);
 
     const walletsList = createMemo<UIWalletInfo[] | null>(() => {

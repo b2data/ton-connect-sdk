@@ -60,7 +60,7 @@ export const AllWalletsListModal: Component<DesktopSelectWalletModalProps> = pro
 
     return (
         <DesktopSelectWalletModalStyled data-tc-wallets-modal-list="true">
-            <StyledIconButton icon="arrow" onClick={() => props.onBack()} />
+            {/* <StyledIconButton icon="arrow" onClick={() => props.onBack()} /> */}
             <H1Styled translationKey="walletModal.wallets">Wallets</H1Styled>
             <ScrollContainer maxHeight={maxHeight()}>
                 <WalletsUl>

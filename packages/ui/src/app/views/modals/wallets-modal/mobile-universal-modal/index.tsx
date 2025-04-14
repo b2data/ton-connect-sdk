@@ -164,7 +164,7 @@ export const MobileUniversalModal: Component<MobileUniversalModalProps> = props 
                 />
             </Show>
             <Show when={!showQR()}>
-                <StyledLeftActionButton icon={<QRIcon />} onClick={onOpenQR} />
+                {/* <StyledLeftActionButton icon={<QRIcon />} onClick={onOpenQR} /> */}
                 <H1Styled translationKey="walletModal.mobileUniversalModal.connectYourWallet">
                     Connect your TON wallet
                 </H1Styled>
