@@ -1,5 +1,14 @@
 # Changelog @b2data/tonconnect-ui-react 
 
+## [2.2.1](https://github.com/b2data/ton-connect-sdk/compare/ui-react-2.2.0...ui-react-2.2.1) (2025-04-14)
+
+
+### Features
+
+* remove unviersal qr code ([eabfcdc](https://github.com/b2data/ton-connect-sdk/commit/eabfcdcead03cbf1c6508f7ed579c0a8db6ae238))
+
+
+
 # [2.2.0](https://github.com/b2data/ton-connect-sdk/compare/ui-react-2.0.28...ui-react-2.2.0) (2025-04-10)
 
 
