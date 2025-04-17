@@ -38,12 +38,12 @@ export const MobileUniversalModal: Component<MobileUniversalModalProps> = props 
     const [universalLink, setUniversalLink] = createSignal<string | null>(null);
     const connector = appState.connector;
 
+    const atWallet = props.walletsList.find(wallet => wallet.appName.includes(AT_WALLET_APP_NAME));
+
     const walletsList = (): UIWalletInfo[] =>
-        props.walletsList.filter(w => supportsMobile(w) && !w.appName.includes(AT_WALLET_APP_NAME));
+        props.walletsList.filter(w => supportsMobile(w) && w.appName !== atWallet?.appName);
 
     const shouldShowMoreButton = (): boolean => walletsList().length > 7;
-
-    const atWallet = props.walletsList.find(wallet => wallet.appName.includes(AT_WALLET_APP_NAME));
 
     const walletsBridges = createMemo(() => getUniqueBridges(props.walletsList), null, {
         equals: bridgesIsEqual
@@ -51,7 +51,7 @@ export const MobileUniversalModal: Component<MobileUniversalModalProps> = props 
 
     const atWalletSupportFeatures = createMemo(
         () =>
-            props.walletsList.find(wallet => wallet.appName.includes(AT_WALLET_APP_NAME))
+            props.walletsList.find(wallet => wallet?.appName === atWallet?.appName)
                 ?.isSupportRequiredFeatures ?? false,
         null
     );
@@ -190,37 +190,45 @@ export const MobileUniversalModal: Component<MobileUniversalModalProps> = props 
                         </Translation>
                     </TelegramButtonStyled>
                 </Show>
-                <H2Styled
-                    translationKey="walletModal.mobileUniversalModal.chooseOtherApplication"
-                    maxWidth={342}
-                    padding={'0 24px 8px 24px'}
-                    margin={'0'}
-                >
-                    Choose other application
-                </H2Styled>
-                <WalletUlContainer>
-                    <For each={shouldShowMoreButton() ? visibleWallets() : supportedWallets()}>
-                        {wallet => (
-                            <li>
-                                <WalletItem
-                                    icon={wallet.imageUrl}
-                                    name={wallet.name}
-                                    onClick={() => props.onSelect(wallet)}
-                                />
-                            </li>
-                        )}
-                    </For>
-                    <Show when={shouldShowMoreButton()}>
-                        <li>
-                            <FourWalletsItem
-                                labelLine1="View all"
-                                labelLine2="wallets"
-                                images={fourWalletsItem().map(i => i.imageUrl)}
-                                onClick={() => props.onSelectAllWallets()}
-                            />
-                        </li>
-                    </Show>
-                </WalletUlContainer>
+                {supportedWallets().length && (
+                    <>
+                        <H2Styled
+                            translationKey="walletModal.mobileUniversalModal.chooseOtherApplication"
+                            maxWidth={342}
+                            padding={'0 24px 8px 24px'}
+                            margin={'0'}
+                        >
+                            Choose other application
+                        </H2Styled>
+                        <WalletUlContainer>
+                            <For
+                                each={
+                                    shouldShowMoreButton() ? visibleWallets() : supportedWallets()
+                                }
+                            >
+                                {wallet => (
+                                    <li>
+                                        <WalletItem
+                                            icon={wallet.imageUrl}
+                                            name={wallet.name}
+                                            onClick={() => props.onSelect(wallet)}
+                                        />
+                                    </li>
+                                )}
+                            </For>
+                            <Show when={shouldShowMoreButton()}>
+                                <li>
+                                    <FourWalletsItem
+                                        labelLine1="View all"
+                                        labelLine2="wallets"
+                                        images={fourWalletsItem().map(i => i.imageUrl)}
+                                        onClick={() => props.onSelectAllWallets()}
+                                    />
+                                </li>
+                            </Show>
+                        </WalletUlContainer>
+                    </>
+                )}
             </Show>
         </div>
     );
